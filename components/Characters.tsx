@@ -1,9 +1,6 @@
 import React from 'react';
 import { useQuery } from '@tanstack/react-query';
-
-type T {
-	name: string;
-  }
+import Chars from './Chars';
 
 export default function Characters() {
 	const fetchChars = async () => {
@@ -11,16 +8,16 @@ export default function Characters() {
 		return res.json();
 	};
 
-	const { data, error, status } = useQuery('character', fetchChars);
+	const { data, error, status } = useQuery(['character'], fetchChars);
 
 	if (status === 'loading') return <div>Loading...</div>;
 
 	if (status === 'error') return <div>Error</div>;
 
 	return (
-		<div>
+		<div className='characters'>
 			{data.results.map((character) => (
-				<div>{character.name}</div>
+				<Chars key={character.id} character={character} />
 			))}
 		</div>
 	);
