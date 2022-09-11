@@ -13,6 +13,8 @@ yarn dev
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
 
+TO-DO
 
 -  Known current issues: When adjusted to a mobile-like screen resolution, need character data to still populate.
 
+-  Want to clean up types as well.
