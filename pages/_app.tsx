@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 	return (
 		<main className='Main'>
 			<div className='container'>
-				<h1>Rick and Morty Query</h1>
+				<h1 className='h1'>Rick and Morty Query</h1>
 				<QueryClientProvider client={queryClient}>
 					<Component {...pageProps} />
 				</QueryClientProvider>
